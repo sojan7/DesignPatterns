@@ -1,14 +1,10 @@
-﻿using OpenQA.Selenium.IE;
-using OpenQA.Selenium;
-
-namespace BrowserCore
+﻿namespace BrowserCore
 {
-    public class IEDriverFactory : IBrowserDriver
+    public class IEDriverFactory : BrowserDriverFactory
     {
-        public IWebDriver GetWebDriver()
+        public override IBrowserDriver GetBrowserDriver()
         {
-            InternetExplorerOptions options = new InternetExplorerOptions();
-            return new InternetExplorerDriver(options);
+            return new MyIEDriver();
         }
     }
 }

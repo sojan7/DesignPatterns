@@ -1,14 +1,10 @@
-﻿using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium;
-
-namespace BrowserCore
+﻿namespace BrowserCore
 {
-    public class FirefoxDriverFactory : IBrowserDriver
+    public class FirefoxDriverFactory : BrowserDriverFactory
     {
-        public IWebDriver GetWebDriver()
+        public override IBrowserDriver GetBrowserDriver()
         {
-            FirefoxOptions options = new();
-            return new FirefoxDriver(options);
+            return new MyFirefoxDriver();
         }
     }
 }

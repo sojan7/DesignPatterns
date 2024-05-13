@@ -1,15 +1,12 @@
 ﻿using BrowserCore;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
 
 namespace DesignPatterns
 {
-    public class ChromeDriverFactory : IBrowserDriver
+    public class ChromeDriverFactory : BrowserDriverFactory
     {
-        public IWebDriver GetWebDriver()
+        public override IBrowserDriver GetBrowserDriver()
         {
-            ChromeOptions options = new();
-            return new ChromeDriver(options);
+            return new MyChromeDriver();
         }
     }
 }
